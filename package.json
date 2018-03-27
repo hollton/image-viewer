@@ -1,0 +1,24 @@
+{
+  "name": "image-viewer",
+  "version": "1.0.0",
+  "description": "支持旋转，缩放，拖动",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --progress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hollton/image-viewer.git"
+  },
+  "author": "holltonliu@163.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hollton/image-viewer/issues"
+  },
+  "homepage": "https://github.com/hollton/image-viewer#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-es2015": "^6.24.1"
+  }
+}

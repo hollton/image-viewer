@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>图片预览: 支持旋转，缩放</title>
+    <style type="text/css">
+	    *, :after, :before {
+	        box-sizing: border-box;
+	    }
+	    html, body {
+	    	width: 100%;
+	    	height: 100%;
+	    	margin: 0;
+	    	padding: 0;
+	    }
+	    .container {
+	        width: 100%;
+	        height: 100%;
+	        overflow: auto;
+	        text-align: center;
+	        position: relative;
+	    }
+	    .container::before {
+	        content: " ";
+	        display: inline-block;
+	        height: 100%;
+	        width: 0;
+	        vertical-align: middle;
+	    }
+		.content {
+	        display: inline-block;
+	        width: 99%;
+	        height: 100%;
+	        vertical-align: middle;
+	        padding-bottom: 40px;
+	    }
+	    .bar {
+	        height: 40px;
+	        line-height: 40px;
+	        width: 100%;
+	        position: absolute;
+	        bottom: 0;
+	        background-color: #fbfbfb;
+	        text-align: center;
+	    }
+	    .bar a {
+	        margin: 0 10px;
+	        cursor: pointer;
+	        color: #333;
+	        text-decoration: none;
+	    }
+	    #viewer {
+	    	height: 100%;
+	    	overflow: hidden;
+	    }
+	    #viewer::before {
+	    	content: " ";
+	    	display: inline-block;
+	    	height: 100%;
+	    	width: 0;
+	    	vertical-align: middle;
+	    }
+	    #img {
+	        max-height: 100%;
+	        max-width: 100%;
+	        vertical-align: middle;
+	        position: relative;
+	    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <div id="viewer">
+                <img id="img" src="https://avatars1.githubusercontent.com/u/8556701?s=460&v=4" />
+            </div>
+        </div>
+        <div class="bar">
+            <a onclick="handleImage('rotate', -1)">左旋</a>
+            <a onclick="handleImage('rotate', 1)">右旋</a>
+            <a onclick="handleImage('scale', -1)">缩小</a>
+            <a onclick="handleImage('scale', 1)">放大</a>
+        </div>
+    </div>
+
+    <script src="../dist/bundle.js"></script>
+    <script type="text/javascript">
+    	var imgDom = document.getElementById('img');
+    	var containerDom = document.getElementById('viewer');
+    	imageViewer.initImage(imgDom, containerDom);
+    	var handleImage = function(type, inc) {
+    		imageViewer.handleImage({
+    			type,
+    			inc
+    		});
+    	}
+    </script>
+</body>
+
+</html>
