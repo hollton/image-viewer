@@ -67,6 +67,26 @@
 	        vertical-align: middle;
 	        position: relative;
 	    }
+	    #tip {
+	      position: absolute;
+	      z-index: 3;
+	      left: 50%;
+	      top: 50%;
+	      margin-left: -60px;
+	      margin-top: -20px;
+	      padding: 0 36px;
+	      min-width: 120px;
+	      height: 40px;
+	      line-height: 40px;
+	      font-size: 14px;
+	      color: #fefefe;
+	      text-align: center;
+	      background: rgba(0,0,0,.6);
+	      border-radius: 20px;
+	    }
+	    .hide {
+	    	display: none;
+	    }
     </style>
 </head>
 
@@ -74,6 +94,7 @@
     <div class="container">
         <div class="content">
             <div id="viewer">
+            	<span id="tip" class="hide"></span>
                 <img id="img" src="https://avatars1.githubusercontent.com/u/8556701?s=460&v=4" />
             </div>
         </div>
@@ -89,13 +110,34 @@
     <script type="text/javascript">
     	var imgDom = document.getElementById('img');
     	var containerDom = document.getElementById('viewer');
-    	imageViewer.initImage(imgDom, containerDom);
+    	var tipDom = document.getElementById('tip');
+    	var timer = null;
+    	
+    	imageViewer.initImage(imgDom, containerDom, {
+    		disableWheel: false
+    	});
+
+    	imageViewer.handleCallback(function (imageData) {
+    		calcScalePercent(imageData);
+    	});
+
     	var handleImage = function(type, inc) {
     		imageViewer.handleImage({
     			type,
     			inc
     		});
-    	}
+    	};
+
+    	var calcScalePercent = function(imageData){
+    		if (imageData.operateType === 'scale') {
+    			clearTimeout(timer)
+    			tipDom.className = '';
+    			tipDom.innerText = parseInt(imageData.scale * 100) + '%';
+    			timer = setTimeout(() => {
+    			  tipDom.className = 'hide';
+    			}, 2000)
+    		}
+    	};
     </script>
 </body>
 
