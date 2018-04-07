@@ -1,5 +1,5 @@
 {
-  "name": "image-viewer",
+  "name": "es-image-viewer",
   "version": "1.0.0",
   "description": "支持旋转，缩放，拖动",
   "main": "index.js",

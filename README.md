@@ -1,9 +1,14 @@
-# image-viewer
+# es-image-viewer
 >JavaScript image viewer, support rotation, zoom and drag.
-
 >图片操作，支持旋转，缩放及拖动
 
 ## 使用
+### npm
+```javascript
+npm i es-image-viewer --save
+```
+
+### 浏览器
 `import imageViewer from 'xxx'` 或 `window.imageViewer`
 
 ## API
