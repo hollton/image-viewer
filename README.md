@@ -2,6 +2,8 @@
 >JavaScript image viewer, support rotation, zoom and drag.
 >图片操作，支持旋转，缩放及拖动
 
+[Demo](http://htmlpreview.github.io/?https://github.com/hollton/image-viewer/blob/master/demo/index.html)
+
 ## 使用
 ### npm
 ```javascript
