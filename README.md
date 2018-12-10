@@ -1,22 +1,39 @@
 # es-image-viewer
+[![npm](https://img.shields.io/npm/v/es-image-viewer.svg)](https://www.npmjs.com/package/es-image-viewer) 
+[![LICENSE MIT](https://img.shields.io/npm/l/es-image-viewer.svg)](https://www.npmjs.com/package/es-image-viewer) 
 >JavaScript image viewer, support rotation, zoom and drag.
 >图片操作，支持旋转，缩放及拖动
 
-## 使用
+[Demo](http://htmlpreview.github.io/?https://github.com/hollton/image-viewer/blob/master/demo/index.html)
+
+## 安装
+
 ### npm
-```javascript
+```
 npm i es-image-viewer --save
 ```
 
-### 浏览器
-`import imageViewer from 'xxx'` 或 `window.imageViewer`
+### script
+```
+<script src="dist/image-viewer.min.js"></script>
+```
+
+## 使用
+
+### npm
+```
+import imageViewer from 'es-image-viewer'
+```
+
+### script
+挂载在全局变量 imageViewer 下
 
 ## API
 
 ### initImage(imgDom, containerDom, options)
 图片初始化
 
-#### 参数
+#### params
 * imgDom: 必须，操作图片dom
 * containerDom: 非必须，图片容器dom, 默认为图片dom父节点。用于计算与限制图片拖动范围
 * options: 非必须，可选配置
@@ -27,9 +44,7 @@ npm i es-image-viewer --save
     - scaleRange: Array // 缩放约束范围，默认[0.5, 2]
 * }
 
-#### 返回: undefined
-#### 实例
-``` javascript
+```
 var imgDom = document.getElementById('img');
 var containerDom = document.getElementById('viewer');
 imageViewer.initImage(imgDom, containerDom, {
@@ -40,15 +55,13 @@ imageViewer.initImage(imgDom, containerDom, {
 ### handleImage({type: 'string', inc: Number})
 响应图片旋转，缩放操作
 
-#### 参数
+#### params
 * {
     - type: string, // 操作类型，支持'rotate'、'scale'
     - inc: Number // 操作增量，1为右旋或放大；-1为左旋或缩小
 * }
 
-#### 返回: undefined
-#### 实例
-``` javascript
+```
 // 右旋转
 imageViewer.handleImage({
     type: 'rotate',
@@ -59,10 +72,10 @@ imageViewer.handleImage({
 ### handleCallback(callbackFunc)
 图片旋转，缩放操作回调
 
-#### 参数
+#### params
 * callbackFunc: function //回调执行函数
 
-#### 返回
+#### return
 * imageData 
 * {
     - operateType: 'string', // 操作类型 'rotate' || 'scale'
@@ -70,8 +83,7 @@ imageViewer.handleImage({
     - scale: Number, // 图片缩放比例
 * }
 
-#### 实例
-``` javascript
+```
 imageViewer.handleCallback(function (imageData) {
     console.log(imageData);
     // { operateType: 'rotate', rotate: 90, scale: 1}

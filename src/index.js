@@ -1,5 +1,5 @@
 /**
- * imageViewer v 1.0.0
+ * imageViewer
  * Author: holltonliu@163.com
  * github: git@github.com:hollton/image-viewer.git
  */
