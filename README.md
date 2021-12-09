@@ -1,10 +1,12 @@
 # es-image-viewer
-[![npm](https://img.shields.io/npm/v/es-image-viewer.svg)](https://www.npmjs.com/package/es-image-viewer) 
-[![LICENSE MIT](https://img.shields.io/npm/l/es-image-viewer.svg)](https://www.npmjs.com/package/es-image-viewer) 
+
+![](https://flat.badgen.net/npm/v/es-image-viewer)
+![](https://flat.badgen.net/bundlephobia/minzip/es-image-viewer)
+![](https://flat.badgen.net/npm/license/es-image-viewer)
+![](https://flat.badgen.net/npm/dt/es-image-viewer)
+ 
 >JavaScript image viewer, support rotation, zoom and drag.
 >图片操作，支持旋转，缩放及拖动
-
-[Demo](http://htmlpreview.github.io/?https://github.com/hollton/image-viewer/blob/master/demo/index.html)
 
 ## 安装
 
